@@ -1,12 +1,11 @@
 {
     "name": "express-project",
     "version": "1.0.0",
-    "description": "",
+    "description": "explore express",
     "main": "index.js",
     "scripts": {
         "watch":"nodemon index.js",
-        "start":"node index.js",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "start":"node index.js"
     },
     "keywords": [],
     "author": "",
