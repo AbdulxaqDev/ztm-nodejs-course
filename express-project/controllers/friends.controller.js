@@ -1,20 +1,8 @@
-
-
-const friends = [
-    {
-        id: 0,
-        name: "Brendan",
-
-    },
-    {
-        id: 1,
-        name: "Eich", 
-    },
-]
+const model = require('../model/friends.js');
 
 function getFriend(req, res){
     const friendId = Number(req.params.friendId);
-    const friend = friends[friendId];
+    const friend = model[friendId];
 
     if(friend){
         res.status(200).json(friend);
@@ -24,7 +12,7 @@ function getFriend(req, res){
 }
 
 function getFriends(req, res){
-    res.status(200).json(friends);
+    res.status(200).json(model)
 }
 
 function postFriend(req, res){
@@ -36,18 +24,18 @@ function postFriend(req, res){
        });
     }
 
-    const isFriendExist = friends.find(friend => friend.name == name)
+    const isFriendExist = model.find(friend => friend.name == name)
 
     if (isFriendExist) {
         return res.status(400).json({error: `${name} is already exist.`});
     }
 
     const newFriend = {
-        id: friends.length,
+        id: model.length,
         name: name,
     }
     
-    friends.push(newFriend);
+    model.push(newFriend);
 
     return res.json(newFriend);
 }
