@@ -4,13 +4,14 @@
     "description": "explore express",
     "main": "index.js",
     "scripts": {
-        "watch":"nodemon index.js",
-        "start":"node index.js"
+        "watch": "nodemon index.js",
+        "start": "node index.js"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.18.2"
+        "express": "^4.18.2",
+        "hbs": "^4.2.0"
     }
 }
